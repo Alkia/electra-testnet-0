@@ -1,8 +1,6 @@
 # Electra Testnet-0 guide
 ![Electra (1)](https://github.com/Alkia/electra/raw/master/vue/public/Electra.png)
 
-
-[Website](https://electra.alkia.net/)       [Block Explorer](https://www.mintscan.io/electra/validators)
 =
 - **Recommended hardware requirements**:
 
@@ -93,6 +91,10 @@
     rm -rf .electrad && \
     rm -rf electra && \
     rm -rf $(which electrad)
+    
+# References    
+    * [Website](https://electra.alkia.net/)       
+    * [Block Explorer](https://www.mintscan.io/electra/validators)
 
 # Options
 
