@@ -1,7 +1,7 @@
-# Electra Testnet-0 guide
 ![Electra (1)](https://github.com/Alkia/electra/raw/master/vue/public/Electra.png)
 
-=
+# Electra Testnet-0 guide
+
 - **Recommended hardware requirements**:
 
 | Network   |CPU | RAM  | Storage  | 
