@@ -92,6 +92,18 @@
     rm -rf electra && \
     rm -rf $(which electrad)
     
+# Notes on Managing Validator
+
+Running a production-quality validator node with a robust architecture and security features requires an extensive setup.
+
+Electra chain is powered by the Tendermint consensus. Validators run full nodes, participate in consensus by broadcasting votes, commit new blocks to the blockchain, and participate in governance of the blockchain.
+
+Validators earn the following fees:
+- Gas: Fees added on to each transaction to avoid spamming and pay for computing power. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
+- Validators get coins as rewards proportional to their shares
+
+`If validators double sign or frequently offline, their credibility will be slashed. Penalties can vary depending on the severity of the violation.`
+    
 # References    
     * [Website](https://electra.alkia.net/)       
     * [Block Explorer](https://www.mintscan.io/electra/validators)
