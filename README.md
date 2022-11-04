@@ -2,8 +2,8 @@
 ![Electra (1)](https://github.com/Alkia/electra/raw/master/vue/public/Electra.png)
 
 
-[Website](https://www.alkia.net/) \
-[EXPLORER](https://www.mintscan.io/electra/validators)
+[Website](https://electra.alkia.net/)  
+//[EXPLORER](https://www.mintscan.io/electra/validators)
 =
 - **Recommended hardware requirements**:
 
