@@ -9,6 +9,16 @@
 | Testnet 0   |  2 | 8GB | 0.25TB SSD/NVMe |
 | Mainnet   |  2 | 16GB | 0.5TB SSD/NVMe |
 
+- **testnet-0 official ports**:   
+
+| Service | testnet-0 Port | Description |
+|----------|----------------|-------------|
+|  rpc      |      26659      |             |
+| p2p       |      26658      |             |
+| prof      |       6061      |             |
+|  grpc     |       9092      |             |
+| grpc-web  |       9093      |             |
+
 ### Preparing the server
 
     sudo apt update && sudo apt upgrade -y && \
@@ -22,17 +32,7 @@
     echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
     source ~/.bash_profile && \
     go version
-    
-## testnet-0 official ports    
-
-| Service | testnet-0 Port | Description |
-|----------|----------------|-------------|
-|  rpc      |      26659      |             |
-| p2p       |      26658      |             |
-| prof      |       6061      |             |
-|  grpc     |       9092      |             |
-| grpc-web  |       9093      |             |
-    
+      
 ## Build    (07.11.22)
     git clone https://github.com/alkia/electra
     cd electra
@@ -89,19 +89,7 @@
     sudo systemctl enable electrad
     sudo systemctl restart electrad
     sudo journalctl -u electrad -f -o cat
-    
-    
-## Delete node
-
-    sudo systemctl stop electrad && \
-    sudo systemctl disable electrad && \
-    rm /etc/systemd/system/electrad.service && \
-    sudo systemctl daemon-reload && \
-    cd $HOME && \
-    rm -rf .electrad && \
-    rm -rf electra && \
-    rm -rf $(which electrad)
-    
+       
 # Notes on Managing Validator
 
 Running a production-quality validator node with a robust architecture and security features requires an extensive setup.
@@ -129,6 +117,18 @@ Validators earn the following fees:
     sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.electrad/config/app.toml && \
     sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.electrad/config/app.toml && \
     sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.electrad/config/app.toml
+    
 ## Indexer (optional)    
     indexer="null" && \
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.electrad/config/config.toml    
+   
+## Delete node
+
+    sudo systemctl stop electrad && \
+    sudo systemctl disable electrad && \
+    rm /etc/systemd/system/electrad.service && \
+    sudo systemctl daemon-reload && \
+    cd $HOME && \
+    rm -rf .electrad && \
+    rm -rf electra && \
+    rm -rf $(which electrad)    
