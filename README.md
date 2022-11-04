@@ -25,13 +25,13 @@
     
 ## testnet-0 official ports    
 
-    | Service   | testnet-0 Port | Description |
-|-----------|----------------|-------------|
-|  rpc | 26659 | |
-| p2p | 26658 | |
-| prof | 6061 | |
-|  grpc | 9092 | |
-| grpc-web | 9093 | |
+| Service | testnet-0 Port | Description |
+|----------|----------------|-------------|
+|  rpc      |      26659      |             |
+| p2p       |      26658      |             |
+| prof      |       6061      |             |
+|  grpc     |       9092      |             |
+| grpc-web  |       9093      |             |
     
 ## Build    (07.11.22)
     git clone https://github.com/alkia/electra
