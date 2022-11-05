@@ -38,10 +38,10 @@
 ## Build    (07.11.22)
     git clone https://github.com/alkia/electra
     cd electra
-    git checkout v1.0.1
+    git checkout v0.1.4
     make install
 `electrad version`
-+ 1.0.1
++ version 0.1.4
 
       electrad init <moniker-name> --chain-id electra-testnet-0    
 
