@@ -56,7 +56,7 @@
     external_address=$(wget -qO- eth0.me)
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26658\"/" $HOME/.electra/config/config.toml
 
-    peers="d8ac979da3dbe2f796e2344616096160dc5cfdc1@164.92.191.127:26656"
+    peers="d8ac979da3dbe2f796e2344616096160dc5cfdc1@34.213.122.198:26658"
     sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.electra/config/config.toml
     seeds=""
     sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.electra/config/config.toml 
