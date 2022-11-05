@@ -18,6 +18,7 @@
 | prof      |       6061      |                   |
 | grp c     |       9092      |                   |
 | grpc-web  |       9093      |                   |
+| roseta    |       8080      |                   |
 
 ### Preparing the server
 
