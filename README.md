@@ -1,6 +1,6 @@
 ![Electra (1)](https://github.com/Alkia/electra/raw/master/vue/public/Electra.png)
 
-# Electra testnet-0 guide
+# The electra-testnet-0 guide
 
 - **Recommended hardware requirements**:
 
