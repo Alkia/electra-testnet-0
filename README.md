@@ -63,6 +63,9 @@
     seeds=""
     sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.electra/config/config.toml 
     
+    sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 100/g' $HOME/.electra/config/config.toml
+    sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 100/g' $HOME/.electra/config/config.toml
+    
 
     
 ## Create a service file
@@ -103,7 +106,26 @@ Validators earn the following fees:
 - Validators get coins as rewards proportional to their shares
 
 `If validators double sign or frequently offline, their credibility will be slashed. Penalties can vary depending on the severity of the violation.`
-    
+
+
+## Create validator
+```
+electrad tx staking create-validator \
+--amount 1000000000000000000aISLM \
+--from <walletName> \
+--commission-max-change-rate "0.10" \
+--commission-max-rate "0.20" \
+--commission-rate "0.10" \
+--min-self-delegation "1" \
+--identity="" \
+--details="" \
+--website="" \
+--pubkey $(haqqd tendermint show-validator) \
+--moniker STAVRguide \
+--chain-id haqq_54211-3 \
+-y
+```
+
 # References    
     * [Website](https://electra.alkia.net/)       
     * [Block Explorer](https://www.mintscan.io/electra/validators)
