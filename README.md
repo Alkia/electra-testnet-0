@@ -81,8 +81,8 @@ chmod a+x   /usr/local/bin/electrad
 ```
 ## Create/recover wallet
 ```
-     electrad keys add <walletname>
-     electrad keys add <walletname> --recover
+electrad keys add <walletname>
+electrad keys add <walletname> --recover
 ```
 ##### when creating, do not forget to write down the seed phrase   
 
@@ -92,7 +92,7 @@ electrad keys list
 ```
 
 ## Genesis
-    wget https://raw.githubusercontent.com/Alkia/electra-testnet-0/e9b450f853d64d6972c3b5ba6f71e13c4e705eea/genesis.json
+    wget https://raw.githubusercontent.com/Alkia/electra-testnet-0/main/genesis.json
     mv genesis.json ~/.electra/config/    
 ## Set up the minimum gas price $HOME/.electra/config/app.toml as well as seed and peers
     sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"1uelectra\"/;" ~/.electra/config/app.toml
