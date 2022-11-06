@@ -26,61 +26,71 @@
     sudo apt update && sudo apt upgrade -y && \
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 
+## Install the binary
 There are 2 options to get the binary:
 
-## Option 1: Download (the easier softer way)
+    ### Option 1: Download (the easier softer way)
 
-### 1.1) Download from this repo the 2 splits of the file
-Githup accept upload of 25M max and we are a bit over so we needed to split in 2 files (command: <i>split -b 20M electra_linux_amd64.tar.gz </i>):
+        #### 1.1) Download from this repo the 2 splits of the file
+        Github limit http upload to 25M max and we are a bit over so we needed to split in 2 files (command: <i>split -b 20M electra_linux_amd64.tar.gz </i>):
 
-* electra_linux_amd64.tar.gz.part_aa
-* electra_linux_amd64.tar.gz.part_ab
+        * electra_linux_amd64.tar.gz.part_aa
+        * electra_linux_amd64.tar.gz.part_ab
 
+        #### 1.2) Reconstruct the binary
+        You join the files using the cat command. Employing cat is the most efficient and reliable method of performing a joining operation. 
+        ```
+        cat electra_linux_amd64.tar.gz.part_* > electra_linux_amd64.tar.gz
+        ```
+        Security note: Please check that the checksum provided match the reconstructed electra_linux_amd64.tar.gz
 
-### 1.2) Reconstruct the binary
-You join the files using the cat command. Employing cat is the most efficient and reliable method of performing a joining operation. 
+        #### 1.3) Untar
+        ```
+         tar -xvf electra_linux_amd64.tar.gz 
+        ``` 
+        Thsi gives you the binary *electrad*
+
+        ####  1.4) Copy *electrad* to your favorite binary directory
+        ```
+        cp electrad /usr/local/bin/
+        chmod a+x   /usr/local/bin/electrad
+    ```
+
+    ### Option 2: Recompile
+
+        #### 2.1) Install GO 18.7 (one command)
+            wget https://golang.org/dl/go1.18.7.linux-amd64.tar.gz; \
+            rm -rv /usr/local/go; \
+            tar -C /usr/local -xzf go1.18.7.linux-amd64.tar.gz && \
+            rm -v go1.18.7.linux-amd64.tar.gz && \
+            echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
+            source ~/.bash_profile && \
+            go version
+
+        #### 2.2) Build    (07.11.22)
+            git clone https://github.com/alkia/electra
+            cd electra
+            git checkout v0.1.4
+            make install
+        `electrad version`
+        + version 0.1.4
+
+## Initilize the chain
 ```
-cat electra_linux_amd64.tar.gz.part_* > electra_linux_amd64.tar.gz
-```
-Security note: Please check that the checksum provided match the reconstructed electra_linux_amd64.tar.gz
-
-### 1.3) Untar
-```
- tar -xvf electra_linux_amd64.tar.gz 
-``` 
-Thsi gives you the binary *electrad*
-
-###  1.4) Copy *electrad* to your favorite binary directory
-```
-cp electrad /usr/local/bin/
-chmod a+x   /usr/local/bin/electrad
-```
-
-## Option 2: Recompile
-
-### 2.1) GO 18.7 (one command)
-    wget https://golang.org/dl/go1.18.7.linux-amd64.tar.gz; \
-    rm -rv /usr/local/go; \
-    tar -C /usr/local -xzf go1.18.7.linux-amd64.tar.gz && \
-    rm -v go1.18.7.linux-amd64.tar.gz && \
-    echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
-    source ~/.bash_profile && \
-    go version
-      
-## 2.2) Build    (07.11.22)
-    git clone https://github.com/alkia/electra
-    cd electra
-    git checkout v0.1.4
-    make install
-`electrad version`
-+ version 0.1.4
-
       electrad init <moniker-name> --chain-id electra-testnet-0    
-
+```
 ## Create/recover wallet
+```
      electrad keys add <walletname>
      electrad keys add <walletname> --recover
-##### when creating, do not forget to write down the seed phrase    
+```
+##### when creating, do not forget to write down the seed phrase   
+
+Check that your keys are recorded properly:
+```
+electrad keys list
+```
+
 ## Genesis
     wget https://raw.githubusercontent.com/Alkia/electra-testnet-0/e9b450f853d64d6972c3b5ba6f71e13c4e705eea/genesis.json
     mv genesis.json ~/.electra/config/    
