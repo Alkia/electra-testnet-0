@@ -28,7 +28,7 @@
 
 There are 2 options to get the binary:
 
-## Option 1: Download
+## Option 1: Download (the easier softer way)
 
 ### 1.1) Download from this repo the 2 splits of the file
 Githup accept upload of 25M max and we are a bit over so we needed to split in 2 files (command: <i>split -b 20M electra_linux_amd64.tar.gz </i>):
@@ -60,7 +60,7 @@ Securiy note: Please check that the checksum provided match the reconstructed el
     source ~/.bash_profile && \
     go version
       
-## Build    (07.11.22)
+## 2.2) Build    (07.11.22)
     git clone https://github.com/alkia/electra
     cd electra
     git checkout v0.1.4
