@@ -26,7 +26,30 @@
     sudo apt update && sudo apt upgrade -y && \
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
     
-## GO 18.7 (one command)
+## Option 1: download
+
+### 1.1) Download from this repo the 2 splits of the file
+Githup accept upload of 25M max and we are a bit over so we needed to split in 2 files (command: <i>split -b 20M electra_linux_amd64.tar.gz </i>):
+
+* electra_linux_amd64.tar.gz.part_aa
+* electra_linux_amd64.tar.gz.part_ab
+
+
+### 1.2) Reconstruct the binary
+You join the files using the cat command. Employing cat is the most efficient and reliable method of performing a joining operation. 
+```
+cat electra_linux_amd64.tar.gz.part_* > electra_linux_amd64.tar.gz
+```
+
+### 1.3) Untar
+```
+ tar -xvf electra_linux_amd64.tar.gz 
+``` 
+Securiy note: Please check that the checksum provided match the reconstructed electra_linux_amd64.tar.gz
+
+## Option 2: Recompile
+
+### 2.1) GO 18.7 (one command)
     wget https://golang.org/dl/go1.18.7.linux-amd64.tar.gz; \
     rm -rv /usr/local/go; \
     tar -C /usr/local -xzf go1.18.7.linux-amd64.tar.gz && \
