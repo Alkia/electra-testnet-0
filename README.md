@@ -152,20 +152,7 @@ Validators earn the following fees:
 
 ## Create validator
 ```
-electrad tx staking create-validator \
---amount 1000000000000000000aISLM \
---from <walletName> \
---commission-max-change-rate "0.10" \
---commission-max-rate "0.20" \
---commission-rate "0.10" \
---min-self-delegation "1" \
---identity="" \
---details="" \
---website="" \
---pubkey $(haqqd tendermint show-validator) \
---moniker STAVRguide \
---chain-id haqq_54211-3 \
--y
+electrad tx staking create-validator --amount 100000000uelectra --commission-max-change-rate "0.10" --commission-max-rate "0.20" --commission-rate "0.10" --min-self-delegation "1" --identity="" --details="" --website="" --pubkey $(electrad tendermint show-validator) --moniker electra01 --chain-id electra-testnet-0 -y --from <walletName> 
 ```
 
 # References    
