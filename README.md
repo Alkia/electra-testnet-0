@@ -51,9 +51,10 @@ Security note: Please check that the checksum provided match the reconstructed e
 Thsi gives you the binary *electrad*
 
 ###  1.4) Copy *electrad* to your favorite binary directory
-
+```
 cp electrad /usr/local/bin/
 chmod a+x   /usr/local/bin/electrad
+```
 
 ## Option 2: Recompile
 
