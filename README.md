@@ -29,36 +29,36 @@
 ## Install the binary
 There are 2 options to get the binary:
 
-    ### Option 1: Download (the easier softer way)
+### Option 1: Download (the easier softer way)
 
-        #### 1.1) Download from this repo the 2 splits of the file
-        Github limit http upload to 25M max and we are a bit over so we needed to split in 2 files (command: <i>split -b 20M electra_linux_amd64.tar.gz </i>):
+#### 1.1) Download from this repo the 2 splits of the file
+Github limit http upload to 25M max and we are a bit over so we needed to split in 2 files (command: <i>split -b 20M electra_linux_amd64.tar.gz </i>):
 
-        * electra_linux_amd64.tar.gz.part_aa
-        * electra_linux_amd64.tar.gz.part_ab
+ * electra_linux_amd64.tar.gz.part_aa
+ * electra_linux_amd64.tar.gz.part_ab
 
-        #### 1.2) Reconstruct the binary
-        You join the files using the cat command. Employing cat is the most efficient and reliable method of performing a joining operation. 
-        ```
+#### 1.2) Reconstruct the binary
+You join the files using the cat command. Employing cat is the most efficient and reliable method of performing a joining operation. 
+```
         cat electra_linux_amd64.tar.gz.part_* > electra_linux_amd64.tar.gz
-        ```
+```
         Security note: Please check that the checksum provided match the reconstructed electra_linux_amd64.tar.gz
 
-        #### 1.3) Untar
-        ```
+#### 1.3) Untar
+```
          tar -xvf electra_linux_amd64.tar.gz 
-        ``` 
+``` 
         Thsi gives you the binary *electrad*
 
-        ####  1.4) Copy *electrad* to your favorite binary directory
-        ```
+####  1.4) Copy *electrad* to your favorite binary directory
+```
         cp electrad /usr/local/bin/
         chmod a+x   /usr/local/bin/electrad
-    ```
+```
 
-    ### Option 2: Recompile
+### Option 2: Recompile
 
-        #### 2.1) Install GO 18.7 (one command)
+#### 2.1) Install GO 18.7 (one command)
             wget https://golang.org/dl/go1.18.7.linux-amd64.tar.gz; \
             rm -rv /usr/local/go; \
             tar -C /usr/local -xzf go1.18.7.linux-amd64.tar.gz && \
@@ -67,7 +67,7 @@ There are 2 options to get the binary:
             source ~/.bash_profile && \
             go version
 
-        #### 2.2) Build    (07.11.22)
+#### 2.2) Build    (07.11.22)
             git clone https://github.com/alkia/electra
             cd electra
             git checkout v0.1.4
