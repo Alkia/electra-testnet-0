@@ -25,8 +25,10 @@
 
     sudo apt update && sudo apt upgrade -y && \
     sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
-    
-## Option 1: download
+
+There are 2 options to get the binary:
+
+## Option 1: Download
 
 ### 1.1) Download from this repo the 2 splits of the file
 Githup accept upload of 25M max and we are a bit over so we needed to split in 2 files (command: <i>split -b 20M electra_linux_amd64.tar.gz </i>):
