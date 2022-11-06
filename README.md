@@ -42,12 +42,18 @@ You join the files using the cat command. Employing cat is the most efficient an
 ```
 cat electra_linux_amd64.tar.gz.part_* > electra_linux_amd64.tar.gz
 ```
+Security note: Please check that the checksum provided match the reconstructed electra_linux_amd64.tar.gz
 
 ### 1.3) Untar
 ```
  tar -xvf electra_linux_amd64.tar.gz 
 ``` 
-Securiy note: Please check that the checksum provided match the reconstructed electra_linux_amd64.tar.gz
+Thsi gives you the binary *electrad*
+
+###  1.4) Copy *electrad* to your favorite binary directory
+
+cp electrad /usr/local/bin/
+chmod a+x   /usr/local/bin/electrad
 
 ## Option 2: Recompile
 
