@@ -170,13 +170,13 @@ electrad tx staking create-validator --amount 100000000uelectra --commission-max
     pruning_keep_every="0" && \
     pruning_interval="10" && \
     sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.electra/config/app.toml && \
-    sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.electrad/config/app.toml && \
-    sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.electrad/config/app.toml && \
-    sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.electrad/config/app.toml
+    sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.electra/config/app.toml && \
+    sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.electra/config/app.toml && \
+    sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.electra/config/app.toml
     
 ## Indexer (optional)    
     indexer="null" && \
-    sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.electrad/config/config.toml    
+    sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.electra/config/config.toml    
    
 ## Delete node
 
