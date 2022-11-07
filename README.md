@@ -77,7 +77,9 @@ chmod a+x   /usr/local/bin/electrad
 
 ## Initilize the chain
 ```
-      electrad init <moniker-name> --chain-id electra-testnet-0    
+sudo rm ~/.electra/ -r
+moniker="electra03"
+electrad init $moniker --chain-id electra-testnet-0    
 ```
 ## Create/recover wallet
 ```
