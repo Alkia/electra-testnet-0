@@ -96,10 +96,12 @@ electrad keys list
     mv genesis.json ~/.electra/config/    
 ## Set up the minimum gas price $HOME/.electra/config/app.toml as well as seed and peers
     sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"1uelectra\"/;" ~/.electra/config/app.toml
-
+    sed -i.bak -e "s/^create_empty_blocks *=.*/create_empty_blocks = false/" $HOME/.electra/config/config.toml
+    moniker="electra01" 
+    sed -i.bak -e "s/^moniker *=.*/moniker = \"$moniker\"/" $HOME/.electra/config/config.toml
     external_address=$(wget -qO- eth0.me)
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26659\"/" $HOME/.electra/config/config.toml
-    peers="4915291C1A39C574AB2C659B188085F924ADF6F9@66.42.50.244:26658"
+    peers="D46514E4935C59B9C435C27ACC35CD155C151597@66.42.50.244:26658"
     sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.electra/config/config.toml
     seeds=""
     sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.electra/config/config.toml 
