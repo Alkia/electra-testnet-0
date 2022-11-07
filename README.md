@@ -99,7 +99,7 @@ electrad keys list
 
     external_address=$(wget -qO- eth0.me)
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26659\"/" $HOME/.electra/config/config.toml
-    peers="2053b165f1d0a7a6fd34cf493f6280e27db09abe@66.42.50.244:26658"
+    peers="4915291C1A39C574AB2C659B188085F924ADF6F9@66.42.50.244:26658"
     sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.electra/config/config.toml
     seeds=""
     sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.electra/config/config.toml 
