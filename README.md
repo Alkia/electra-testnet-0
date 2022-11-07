@@ -101,7 +101,7 @@ electrad keys list
     sed -i.bak -e "s/^moniker *=.*/moniker = \"$moniker\"/" $HOME/.electra/config/config.toml
     external_address=$(wget -qO- eth0.me)
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26659\"/" $HOME/.electra/config/config.toml
-    peers="D46514E4935C59B9C435C27ACC35CD155C151597@66.42.50.244:26658"
+    peers="E276114F7F6AC8E6566E22683186AB657BAF7C3E@66.42.50.244:26658"
     sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.electra/config/config.toml
     seeds=""
     sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.electra/config/config.toml 
