@@ -106,6 +106,10 @@ electrad keys list
 ## Genesis
     wget https://raw.githubusercontent.com/Alkia/electra-testnet-0/main/genesis.json
     mv genesis.json ~/.electra/config/    
+    
+    Seeds format:
+    seeds = "[node_id@ip:port]"
+    
 ## Set up the minimum gas price $HOME/.electra/config/app.toml as well as seed and peers
 
     sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"1uelectra\"/;" ~/.electra/config/app.toml
