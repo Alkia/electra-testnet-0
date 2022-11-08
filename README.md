@@ -34,6 +34,7 @@ There are 2 options to get the binary:
 #### 1.0) Direct download
 ```
 wget http://electra01.alkia.net:3000/electrad.7z
+p7zip -d electrad.7z
 ```
 #### 1.1) Download from this repo the 2 splits of the file
 Github limit http upload to 25M max and we are a bit over so we needed to split in 2 files (command: <i>split -b 20M electra_linux_amd64.tar.gz </i>):
