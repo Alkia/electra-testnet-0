@@ -140,11 +140,16 @@ electrad keys list
  [RPC](https://nodejumper.io/electra/sync) (optional)
  
 # Start
+```
+# Soft start
+    electrad start --log_level info
+ 
+# Service start 
     sudo systemctl daemon-reload
     sudo systemctl enable electrad
     sudo systemctl restart electrad
     sudo journalctl -u electrad -f -o cat
-       
+```       
 # Notes on Managing Validator
 
 Running a production-quality validator node with a robust architecture and security features requires an extensive setup.
