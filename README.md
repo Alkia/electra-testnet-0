@@ -165,8 +165,14 @@ electrad keys list
 ```
 # Soft start
     electrad start --log_level info
- 
+```
+At first, you will see an error message, e.g.:
+
+E[2020-03-19|09:42:06.072] Stopping peer for error                      module=p2p peer="Peer{MConn{1.2.3.4:26656} dcff5de69dcc170b28b6628a1336d420f7eb60c0 out}" err=EOF
+This is normal. Wait. Eventually, you will see your node downloading blocks. Once you are happy seeing the blocks roll in, hit CTRL+C to stop the node.
+
 # Service start 
+```
     sudo systemctl daemon-reload
     sudo systemctl enable electrad
     sudo systemctl restart electrad
