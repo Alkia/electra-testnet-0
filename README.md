@@ -86,6 +86,11 @@ sudo rm ~/.electra/ -r
 moniker="electra03"
 electrad init $moniker --chain-id electra-testnet-0    
 ```
+NOTES:
+* Use only alphanumeric characters, hyphens, and underscores for your node name.
+* If you are using secondary storage:
+    You need to add a --home flag where you direct the command to the path of your secondary storage. By default, und init uses --home /home/$USER/.und_mainchain if you do not specify otherwise.
+
 ## Create/recover wallet
 ```
 electrad keys add <walletname>
