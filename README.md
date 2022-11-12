@@ -218,7 +218,7 @@ electrad tx staking create-validator --amount 100000000uelectra --commission-max
     indexer="null" && \
     sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.electra/config/config.toml    
    
- electrad validate-genesis
+## Remove
 
     sudo systemctl stop electrad && \
     sudo systemctl disable electrad && \
@@ -230,8 +230,10 @@ electrad tx staking create-validator --amount 100000000uelectra --commission-max
     rm -rf $(which electrad)    
 
 ### electrad chain init
+```
 electrad keys add validator --keyring-backend test
 electrad add-genesis-account electra1ta52mxc8xfmaaatq88ycr6pyuruhqxux6hmdyh 100000000uelectra --keyring-backend test
 electrad gentx validator 100000000uelectra  --chain-id electra-testnet-0  --keyring-backend test
 electrad collect-gentxs
- electrad validate-genesis
+electrad validate-genesis
+```
