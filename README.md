@@ -84,6 +84,7 @@ chmod a+x   /usr/local/bin/electrad
 ```
 sudo rm ~/.electra/ -r
 moniker="electra03"
+electrad tendermint unsafe-reset-all
 electrad init $moniker --chain-id electra-testnet-0    
 ```
 NOTES:
@@ -126,6 +127,7 @@ electrad keys list
     
     sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26659\"/" $HOME/.electra/config/config.toml
     
+    peers="E276114F7F6AC8E6566E22683186AB657BAF7C3E@66.42.50.244:26658"
     peers="62504544f96a078cb70709486e318035c048ebc6@66.42.50.244:26658"
     
     sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.electra/config/config.toml
