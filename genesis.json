@@ -87,7 +87,12 @@
     },
     "bank": {
       "params": {
-        "send_enabled": [],
+        "send_enabled": [
+          {
+            "denom": "uelectra",
+            "enabled": true
+          }
+        ],
         "default_send_enabled": true
       },
       "balances": [
@@ -201,7 +206,7 @@
               {
                 "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
                 "description": {
-                  "moniker": "mynode",
+                  "moniker": "electra01",
                   "identity": "",
                   "website": "",
                   "security_contact": "",
@@ -221,11 +226,11 @@
                 },
                 "value": {
                   "denom": "uelectra",
-                  "amount": "1000000"
+                  "amount": "1000000000"
                 }
               }
             ],
-            "memo": "62504544f96a078cb70709486e318035c048ebc6@66.42.50.244:26656",
+            "memo": "62504544f96a078cb70709486e318035c048ebc6@66.42.50.244:26658",
             "timeout_height": "0",
             "extension_options": [],
             "non_critical_extension_options": []
@@ -337,7 +342,7 @@
         "inflation": "0.130000000000000000"
       },
       "params": {
-        "blocks_per_year": "6311520",
+        "blocks_per_year": "4360000",
         "goal_bonded": "0.670000000000000000",
         "inflation_max": "0.200000000000000000",
         "inflation_min": "0.070000000000000000",
@@ -386,7 +391,7 @@
         "historical_entries": 10000,
         "max_entries": 7,
         "max_validators": 100,
-        "unbonding_time": "1814400s"
+        "unbonding_time": "0.001s"
       },
       "redelegations": [],
       "unbonding_delegations": [],
@@ -401,6 +406,11 @@
       "port_id": "transfer"
     },
     "upgrade": {},
-    "vesting": {}
+    "vesting": {},
+    "voting": {
+      "aggregateVoteCountList": [],
+      "params": {},
+      "voteBookList": []
+    }
   }
 }
